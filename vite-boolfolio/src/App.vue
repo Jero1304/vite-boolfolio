@@ -1,9 +1,14 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import project from './components/project.vue';
+components:{
+  project
+}
 </script>
 
 <template>
-
+  <div class="container">
+    <project/>
+  </div>
 </template>
 
 <style scoped>
