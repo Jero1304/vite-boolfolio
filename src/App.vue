@@ -1,16 +1,16 @@
 <script>
 // import Project from './components/Project.vue'
+import NavBar from './components/NavBar.vue'
 export default {
   components: {
     // Project
+    NavBar,
   }
 }
 </script>
 
 <template>
-  <header>
-    <h1>Project header</h1>
-  </header>
+  <NavBar></NavBar>
   <main>
 
   </main>
