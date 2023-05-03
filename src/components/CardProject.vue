@@ -22,7 +22,7 @@ export default {
         }
     },
     mounted() {
-        console.log(this.project.type);
+        // console.log(this.project.type);
     }
 }
 </script>

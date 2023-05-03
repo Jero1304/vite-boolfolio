@@ -1,19 +1,31 @@
 <script>
-import Project from './components/Project.vue'
+// import Project from './components/Project.vue'
 export default {
   components: {
-    Project
+    // Project
   }
 }
 </script>
 
 <template>
-  <div class="container">
+  <header>
+    <h1>Project header</h1>
+  </header>
+  <main>
+
+  </main>
+  <router-view></router-view>
+  <footer>
+    footer
+  </footer>
+
+
+  <!-- <div class="container">
     <h1 class="title">Project</h1>
   </div>
   <main class="container">
     <Project />
-  </main>
+  </main> -->
 </template>
 
 <style>

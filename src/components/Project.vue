@@ -34,12 +34,12 @@ export default {
                 }
             })
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     const { results } = res.data
                     this.links = results.links
                     this.lastPage = results.last_page
                     this.projects = results.data
-                    console.log(results);
+                    // console.log(results);
                     this.currentPage = results.current_page
 
                 })
