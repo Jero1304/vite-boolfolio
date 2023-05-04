@@ -21,7 +21,7 @@ export default {
     data() {
         return {
             projects: [],
-            lastPage: null,
+            lastPage: 0,
             currentPage: 1,
             links: []
         }

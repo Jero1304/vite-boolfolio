@@ -1,8 +1,20 @@
 <template>
-    <div class="container">
-        <h1>dettagli project</h1>
-        <p>{{ $route.params.slug }} __________ {{ slug }}</p>
-    </div>
+    <Default>
+        <template v-if="project">
+            <div class="container">
+                <h1>{{ project.title }}</h1>
+                <p v-if="project.type">{{ project.type.name }}</p>
+
+                <ul>
+                    <li v-for="technology in project.technologies" :key="technology.slug">{{ technology.name }}</li>
+                </ul>
+            </div>
+            <div class="container">
+                <div v-html="project.content"></div>
+            </div>
+            
+        </template>
+    </Default>
 </template>
 
 <script>
@@ -15,14 +27,27 @@ export default {
 
     props: ['slug'],
 
+    data() {
+        return {
+            project: null
+        }
+    },
     methods: {
         fetchProject() {
-            axios.get(`http://localhost:5173/api/project/${ this.slug }`)
+            axios.get(`http://127.0.0.1:8000/api/projects/${this.slug}`)
                 .then(res => {
                     console.log('res: ', res);
+                    const { success, project } = res.data
+                    if (success) {
+                        this.project = project
+                    }
+                    else {
+                        this.$router.replace('/404')
+                    }
                 })
                 .catch(err => {
                     console.log('Errore!: ', err);
+                    this.$router.replace('/404')
                 })
         }
     },
