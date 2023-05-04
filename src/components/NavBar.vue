@@ -1,20 +1,21 @@
 <template>
-    <header>
-        <div class="container nav">
-            <!-- <h1>Nav bar</h1> -->
-            <router-link :to="{ name: 'home' }"><h1>Boolfolio</h1></router-link>
+    <header class="bg-success">
+        <div class="container py-4 nav">
+            <router-link class="router" :to="{ name: 'home' }">
+                <h1>Boolfolio</h1>
+            </router-link>
 
             <ul class="nav-menu">
                 <li>
-                    <router-link :to="{ name: 'home' }">Home</router-link>
+                    <router-link class="router" :to="{ name: 'home' }">Home</router-link>
                 </li>
 
                 <li>
-                    <router-link :to="{ name: 'about' }">About</router-link>
+                    <router-link class="router" :to="{ name: 'about' }">About</router-link>
                 </li>
 
                 <li>
-                    <router-link :to="{ name: 'project' }">Project</router-link>
+                    <router-link class="router" :to="{ name: 'project' }">Project</router-link>
                 </li>
 
             </ul>
@@ -33,12 +34,26 @@ export default {
 .nav-menu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 2rem;
     list-style: none;
 
+
     .nav-menu {
-        margin-left: auto;
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+
+
+
     }
 
+}
+
+.router {
+    text-decoration: none;
+    color: currentColor;
+    display: flex;
+    align-items: center;
 }
 </style>

@@ -1,18 +1,24 @@
 <template>
     <div class="project-card">
         <router-link class="router" :to="`/project/${project.slug}`">
-            <h3>Titolo: {{ project.title }}</h3>
-            <p>ID: {{ project.id }}</p>
-            <p>Slug: {{ project.slug }}</p>
-            <p>Type: {{ project.type ? project.type.name : '-' }}</p>
+            <div class="card" style="height: 500px; width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Slug: {{ project.slug }}</h6>
 
-            Technologies:
-            <ul class="technology-list" v-if="project.technologies && project.technologies.length > 0">
-                <li class="technology" v-for="tecnology in project.technologies" :key="tecnology.id">{{ tecnology.name }}
-                </li>
-            </ul>
+                    <p class="card-text">ID: {{ project.id }}</p>
+                    <p class="card-text">Type: {{ project.type ? project.type.name : 'not found' }}</p>
 
-            <p>Descrizione: {{ project.content ? project.content : 'Nessuna Descrizione' }}</p>
+                    <p>Technology: </p>
+                    <ul class="technology-list" v-if="project.technologies && project.technologies.length > 0">
+                        <li class="technology" v-for="technology in project.technologies" :key="technology.id">
+                            <span class="badge bg-primary rounded-pill">{{ technology.name }}</span>
+                        </li>
+                    </ul>
+
+                    <p class="card-text">{{ project.content ? project.content : 'Nessuna Descrizione' }}</p>
+                </div>
+            </div>
         </router-link>
     </div>
 </template>
@@ -33,10 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .project-card {
-    border: 2px solid rgb(122, 122, 122);
-    border-radius: 20px;
-    padding: 10px;
-    .router{
+    .router {
         color: currentColor;
         text-decoration: none;
     }
@@ -47,15 +50,12 @@ export default {
         gap: 1rem;
         list-style: none;
         align-items: center;
+        padding-left: 0;
         padding-bottom: 20px;
 
         .technology {
-            padding: 0 1rem;
             line-height: 24px;
-            font-size: 12px;
-            border-radius: 999px;
-            background-color: rgb(171, 171, 171);
-
+            font-size: 22px;
         }
     }
 }

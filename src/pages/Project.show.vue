@@ -1,18 +1,35 @@
 <template>
     <Default>
         <template v-if="project">
-            <div class="container">
+            <div class="container pt-5">
                 <h1>{{ project.title }}</h1>
-                <p v-if="project.type">{{ project.type.name }}</p>
+                <h3>Slug: {{ project.slug }}</h3>
+                <h4>ID: {{ project.id }}</h4>
+                <p class="py-3 fs-3">
+                    Type:
+                    <span class="badge p-2 rounded-pill"
+                        :class="[project.type ? 'bg-warning text-dark' : 'bg-danger text-light']">{{ project.type ?
+                            project.type.name : 'not found' }}</span>
+                </p>
 
-                <ul>
-                    <li v-for="technology in project.technologies" :key="technology.slug">{{ technology.name }}</li>
+                <h3>Technologies: </h3>
+                <ul class="technology">
+                    <li v-for="technology in project.technologies" :key="technology.slug">
+                        <span class="badge bg-primary rounded-pill">{{ technology.name }}</span>
+                    </li>
                 </ul>
             </div>
-            <div class="container">
+            <div class="container pb-5 pt-4">
+                <h4>Content: </h4>
                 <div v-html="project.content"></div>
             </div>
-            
+
+            <div class="container back">
+                <a class="btn btn-success" href="" role="button">
+                    <router-link class="router" :to="{ name: 'project' }">Back to project</router-link>
+                </a>
+            </div>
+
         </template>
     </Default>
 </template>
@@ -57,4 +74,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.technology {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    gap: 1rem;
+    font-size: 30px;
+}
+</style>

@@ -4,9 +4,11 @@
         <slot />
     </main>
 
-    <footer>
+    <footer class="footer bg-dark-subtle">
         <div class="container">
-            footer
+            <div class="footer-body">
+                <h3>footer</h3>
+            </div>
         </div>
     </footer>
 </template>
@@ -20,4 +22,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.footer {
+    
+    .footer-body {
+        // padding-top: 30px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+</style>

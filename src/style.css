@@ -23,3 +23,9 @@
   margin: 0 auto;
   padding: 0 2rem;
 }
+body{
+  height: 100vh;
+}
+main{
+  min-height: 80vh;
+}

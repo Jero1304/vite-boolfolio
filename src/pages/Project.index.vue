@@ -1,6 +1,6 @@
 <template>
     <Default>
-        <div class="container">
+        <div class="container py-5">
             <div class="project">
                 <CardProject v-for="project in projects" :key="project.id" :project="project" />
             </div>

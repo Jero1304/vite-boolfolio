@@ -1,6 +1,6 @@
 <template>
     <Default>
-        <div class="container">
+        <div class="container py-4">
             <h1>Chi sono</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus deserunt aut aliquam?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus deserunt aut aliquam?</p>

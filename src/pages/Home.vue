@@ -1,6 +1,6 @@
 <template>
     <Default>
-        <div class="container">
+        <div class="container py-3">
             <h1>Home Page</h1>
         </div>
     </Default>
