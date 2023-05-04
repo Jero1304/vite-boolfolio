@@ -1,15 +1,19 @@
 <template>
     <div class="project-card">
-        <h3>Titolo: {{ project.title }}</h3>
-        <p>ID: {{ project.id }}</p>
-        <p>Type: {{ project.type ? project.type.name : '-' }}</p>
+        <router-link class="router" :to="`/project/${project.slug}`">
+            <h3>Titolo: {{ project.title }}</h3>
+            <p>ID: {{ project.id }}</p>
+            <p>Slug: {{ project.slug }}</p>
+            <p>Type: {{ project.type ? project.type.name : '-' }}</p>
 
-        Technologies:
-        <ul class="technology-list" v-if="project.technologies && project.technologies.length > 0">
-            <li class="technology" v-for="tecnology in project.technologies" :key="tecnology.id">{{ tecnology.name }}</li>
-        </ul>
+            Technologies:
+            <ul class="technology-list" v-if="project.technologies && project.technologies.length > 0">
+                <li class="technology" v-for="tecnology in project.technologies" :key="tecnology.id">{{ tecnology.name }}
+                </li>
+            </ul>
 
-        <p>Descrizione: {{ project.content ? project.content : 'Nessuna Descrizione' }}</p>
+            <p>Descrizione: {{ project.content ? project.content : 'Nessuna Descrizione' }}</p>
+        </router-link>
     </div>
 </template>
 
@@ -32,6 +36,10 @@ export default {
     border: 2px solid rgb(122, 122, 122);
     border-radius: 20px;
     padding: 10px;
+    .router{
+        color: currentColor;
+        text-decoration: none;
+    }
 
     .technology-list {
         display: flex;
@@ -40,6 +48,7 @@ export default {
         list-style: none;
         align-items: center;
         padding-bottom: 20px;
+
         .technology {
             padding: 0 1rem;
             line-height: 24px;
