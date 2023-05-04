@@ -1,8 +1,8 @@
 <template>
     <header>
         <div class="container nav">
-            <h1>Nav bar</h1>
-            <router-link :to="{ name: 'home' }">Boolfolio</router-link>
+            <!-- <h1>Nav bar</h1> -->
+            <router-link :to="{ name: 'home' }"><h1>Boolfolio</h1></router-link>
 
             <ul class="nav-menu">
                 <li>

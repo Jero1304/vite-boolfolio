@@ -1,22 +1,26 @@
 <template>
-    <div class="container">
-        <div class="project">
-            <CardProject v-for="project in projects" :key="project.id" :project="project" />
+    <Default>
+        <div class="container">
+            <div class="project">
+                <CardProject v-for="project in projects" :key="project.id" :project="project" />
+            </div>
+            <p>currrent page: {{ currentPage }}</p>
+            <ul class="pagination">
+                <li :class="[n === currentPage ? 'active' : '', 'page-link']" v-for="n in lastPage"
+                    @click="fetchProjects(n)" :key="n">{{ n }}</li>
+            </ul>
         </div>
-        <p>currrent page: {{ currentPage }}</p>
-        <ul class="pagination">
-            <li :class="[n === currentPage ? 'active' : '', 'page-link']" v-for="n in lastPage" @click="fetchProjects(n)"
-                :key="n">{{ n }}</li>
-        </ul>
-    </div>
+    </Default>
 </template>
 
 <script>
 import axios from 'axios'
 import CardProject from '../components/CardProject.vue'
+import Default from '../layouts/Default.vue'
 export default {
     components: {
-        CardProject
+        CardProject,
+        Default,
     },
     data() {
         return {

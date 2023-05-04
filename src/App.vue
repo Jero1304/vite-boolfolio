@@ -1,31 +1,16 @@
 <script>
 // import Project from './components/Project.vue'
-import NavBar from './components/NavBar.vue'
+// import NavBar from './components/NavBar.vue'
 export default {
   components: {
     // Project
-    NavBar,
+    // NavBar,
   }
 }
 </script>
 
 <template>
-  <NavBar></NavBar>
-  <main>
-
-  </main>
   <router-view></router-view>
-  <footer>
-    footer
-  </footer>
-
-
-  <!-- <div class="container">
-    <h1 class="title">Project</h1>
-  </div>
-  <main class="container">
-    <Project />
-  </main> -->
 </template>
 
 <style>
